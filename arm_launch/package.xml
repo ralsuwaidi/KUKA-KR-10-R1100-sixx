@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<package>
+	<name>arm_launch</name>
+	<version>0.0.1</version>
+	<description>Description</description>
+	<maintainer email="dankirsdot@gmail.com">Daniil Kirsanov</maintainer>
+	<license>MIT</license>
+	<buildtool_depend>catkin</buildtool_depend>
+</package>

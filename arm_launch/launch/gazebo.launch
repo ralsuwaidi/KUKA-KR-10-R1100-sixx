@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+
+	<include file="$(find gazebo_ros)/launch/empty_world.launch">
+		<arg name="physics" value="ode" />  <!-- ode, bullet, dart or simbody -->
+		<arg name="paused" value="true"/>
+	</include>
+
+	<param name="arm_description" textfile="$(find arm_description)/urdf/arm.urdf"/>
+	
+	<node name="spawn_robot" pkg="gazebo_ros" type="spawn_model"
+		args="-urdf -model myrobot -param arm_description"/>
+
+</launch>

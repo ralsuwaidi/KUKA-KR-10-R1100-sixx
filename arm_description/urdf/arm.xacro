@@ -5,7 +5,15 @@
     <xacro:include filename="$(find arm_description)/urdf/materials.xacro"/>
 
 
-  
+	<gazebo>
+		<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+	    	<robotNamespace>/MYROBOT</robotNamespace>
+	    	<robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+	  	</plugin>
+	</gazebo>
+
+
+
     <link name="world"/>
 
 
@@ -85,6 +93,19 @@
         <axis xyz="0 0 -1"/>
         <limit effort="0" lower="${-DEG2RAD * 170}" upper="${DEG2RAD * 170}" velocity="${DEG2RAD * 300}"/>
     </joint>
+
+
+
+	<transmission name="tran1">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="q1">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor1">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
 
 
 

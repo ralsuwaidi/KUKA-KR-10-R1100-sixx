@@ -5,6 +5,12 @@
 <!-- =================================================================================== -->
 <robot name="kuka_kr10r1100sixx" xmlns:xacro="http://wiki.ros.org/xacro">
   <!-- default colors for robots -->
+  <gazebo>
+    <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
+      <robotNamespace>/MYROBOT</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
   <link name="world"/>
   <link name="base_link">
     <visual>
@@ -62,6 +68,16 @@
     <axis xyz="0 0 -1"/>
     <limit effort="0" lower="-2.96705972839" upper="2.96705972839" velocity="5.23598775598"/>
   </joint>
+  <transmission name="tran1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="q1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
   <link name="link_2">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>

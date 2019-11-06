@@ -46,4 +46,19 @@ or Gazebo launch files
 $ roslaunch arm_launch gazebo.launch
 ```
 
+## Run robot control
+
+For this moment I use rqt for publish commands to joints. You can run it with the next command:
+```bash
+$ roslaunch arm_control gazebo.launch
+```
+
+If you vant to use python instead run
+```bash
+$ rosrun arm_control control.py
+```
+
+Example of robot movements is [here](https://youtu.be/r0B7GUYYAzM)
+
+
 ### Enjoy!

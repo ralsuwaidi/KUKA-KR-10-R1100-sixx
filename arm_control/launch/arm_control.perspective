@@ -41,15 +41,15 @@
                 },
                 "topics": {
                   "type": "repr",
-                  "repr": "[u'/kuka_arm/joint1_position_controller/command/data', u'/kuka_arm/joint1_position_controller/state/process_value']"
+                  "repr": "[u'/kuka_arm/joint6_position_controller/command/data', u'/kuka_arm/joint2_position_controller/command/data', u'/kuka_arm/joint1_position_controller/command/data', u'/kuka_arm/joint5_position_controller/state/process_value', u'/kuka_arm/joint4_position_controller/command/data', u'/kuka_arm/joint2_position_controller/state/process_value', u'/kuka_arm/joint5_position_controller/command/data', u'/kuka_arm/joint3_position_controller/state/process_value', u'/kuka_arm/joint3_position_controller/command/data', u'/kuka_arm/joint4_position_controller/state/process_value', u'/kuka_arm/joint6_position_controller/state/process_value', u'/kuka_arm/joint1_position_controller/state/process_value']"
                 },
                 "y_limits": {
                   "type": "repr",
-                  "repr": "[-8.889999915728946, 2.9699999749968304]"
+                  "repr": "[-100.0, 100.0]"
                 },
                 "x_limits": {
                   "type": "repr",
-                  "repr": "[5.257000000000005, 6.257000000000005]"
+                  "repr": "[564.482, 565.482]"
                 }
               },
               "groups": {}
@@ -63,7 +63,7 @@
               "keys": {
                 "dockable": {
                   "type": "repr",
-                  "repr": "u'true'"
+                  "repr": "True"
                 },
                 "parent": {
                   "type": "repr",
@@ -80,23 +80,23 @@
               "keys": {
                 "autoscroll": {
                   "type": "repr",
-                  "repr": "u'true'"
+                  "repr": "True"
                 },
                 "plot_type": {
                   "type": "repr",
-                  "repr": "u'1'"
+                  "repr": "1"
                 },
                 "topics": {
                   "type": "repr",
-                  "repr": "[u'/kuka_arm/joint4_position_controller/command/data', u'/kuka_arm/joint4_position_controller/state/process_value']"
+                  "repr": "[u'/kuka_arm/joint2_position_controller/command/data', u'/kuka_arm/joint2_position_controller/state/process_value']"
                 },
                 "y_limits": {
                   "type": "repr",
-                  "repr": "[u'-3.2199999542406768', u'3.219999986423237']"
+                  "repr": "[-3.2199999542406768, 3.219999986423237]"
                 },
                 "x_limits": {
                   "type": "repr",
-                  "repr": "[u'910.309', u'911.309']"
+                  "repr": "[14.863999999999999, 15.863999999999999]"
                 }
               },
               "groups": {}
@@ -127,7 +127,7 @@
               "keys": {
                 "publishers": {
                   "type": "repr",
-                  "repr": "u\"[{'type_name': 'std_msgs/Float64', 'topic_name': '/kuka_arm/joint1_position_controller/command', 'enabled': False, 'rate': 100.0, 'expressions': {u'/kuka_arm/joint1_position_controller/command/data': 'sin(i/100*1)*2.96'}, 'publisher_id': 0, 'counter': 2794}, {'topic_name': '/kuka_arm/joint4_position_controller/command', 'type_name': 'std_msgs/Float64', 'enabled': False, 'rate': 100.0, 'expressions': {u'/kuka_arm/joint4_position_controller/command/data': 'sin(i/100*1)*3.22'}, 'publisher_id': 1, 'counter': 0}]\""
+                  "repr": "u\"[{'type_name': 'std_msgs/Float64', 'topic_name': '/kuka_arm/joint1_position_controller/command', 'enabled': False, 'rate': 100.0, 'expressions': {u'/kuka_arm/joint1_position_controller/command/data': '0.0'}, 'publisher_id': 0, 'counter': 5156}, {'topic_name': '/kuka_arm/joint2_position_controller/command', 'type_name': 'std_msgs/Float64', 'enabled': False, 'rate': 100.0, 'expressions': {u'/kuka_arm/joint2_position_controller/command/data': '0.0'}, 'publisher_id': 1, 'counter': 3986}, {'topic_name': '/kuka_arm/joint3_position_controller/command', 'type_name': 'std_msgs/Float64', 'enabled': False, 'rate': 100.0, 'expressions': {}, 'publisher_id': 2, 'counter': 3842}, {'topic_name': '/kuka_arm/joint4_position_controller/command', 'type_name': 'std_msgs/Float64', 'enabled': False, 'rate': 100.0, 'expressions': {u'/kuka_arm/joint4_position_controller/command/data': '0'}, 'publisher_id': 3, 'counter': 3771}, {'topic_name': '/kuka_arm/joint5_position_controller/command', 'type_name': 'std_msgs/Float64', 'enabled': False, 'rate': 100.0, 'expressions': {}, 'publisher_id': 4, 'counter': 3660}, {'topic_name': '/kuka_arm/joint6_position_controller/command', 'type_name': 'std_msgs/Float64', 'enabled': False, 'rate': 100.0, 'expressions': {}, 'publisher_id': 5, 'counter': 3509}, {'type_name': 'std_msgs/Float64', 'topic_name': '/kuka_arm/joint1_position_controller/command', 'enabled': False, 'rate': 100.0, 'expressions': {u'/kuka_arm/joint1_position_controller/command/data': 'sin(i*100)'}, 'publisher_id': 6, 'counter': 1476}, {'type_name': 'std_msgs/Float64', 'topic_name': '/kuka_arm/joint2_position_controller/command', 'enabled': False, 'rate': 100.0, 'expressions': {u'/kuka_arm/joint2_position_controller/command/data': 'sin(i*100)'}, 'publisher_id': 7, 'counter': 1019}, {'type_name': 'std_msgs/Float64', 'topic_name': '/kuka_arm/joint3_position_controller/command', 'enabled': False, 'rate': 100.0, 'expressions': {u'/kuka_arm/joint3_position_controller/command/data': 'sin(i*100)'}, 'publisher_id': 8, 'counter': 1123}, {'type_name': 'std_msgs/Float64', 'topic_name': '/kuka_arm/joint4_position_controller/command', 'enabled': False, 'rate': 100.0, 'expressions': {u'/kuka_arm/joint4_position_controller/command/data': 'sin(i*100)'}, 'publisher_id': 9, 'counter': 1069}, {'type_name': 'std_msgs/Float64', 'topic_name': '/kuka_arm/joint5_position_controller/command', 'enabled': False, 'rate': 100.0, 'expressions': {u'/kuka_arm/joint5_position_controller/command/data': 'sin(i*100)'}, 'publisher_id': 10, 'counter': 1111}, {'type_name': 'std_msgs/Float64', 'topic_name': '/kuka_arm/joint6_position_controller/command', 'enabled': False, 'rate': 100.0, 'expressions': {u'/kuka_arm/joint6_position_controller/command/data': 'sin(i*100)'}, 'publisher_id': 11, 'counter': 1217}]\""
                 }
               },
               "groups": {}
@@ -177,13 +177,13 @@
       "keys": {
         "geometry": {
           "type": "repr(QByteArray.hex)",
-          "repr(QByteArray.hex)": "QtCore.QByteArray('01d9d0cb0002000000000b32000001500000109e0000046400000b320000016e0000109e0000046400000000000000000780')",
-          "pretty-print": "     2 P   d 2 n   d     "
+          "repr(QByteArray.hex)": "QtCore.QByteArray('01d9d0cb0002000000000a43000000c30000117f000004df00000a43000000df0000117f000004df00000000000000000780')",
+          "pretty-print": "     C       C           "
         },
         "state": {
           "type": "repr(QByteArray.hex)",
-          "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00000000fd00000001000000030000056d000002cbfc0100000003fb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0031005f005f00440061007400610050006c006f00740057006900640067006500740100000000000002650000013f00fffffffb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0032005f005f00440061007400610050006c006f007400570069006400670065007401000001450000019b0000000000000000fc0000026b000003020000023d00fffffffc0200000002fb00000058007200710074005f007000750062006c00690073006800650072005f005f005000750062006c00690073006800650072005f005f0031005f005f005000750062006c006900730068006500720057006900640067006500740100000016000000c30000008c00fffffffb0000006c007200710074005f007200650063006f006e006600690067007500720065005f005f0050006100720061006d005f005f0031005f005f005f0070006c007500670069006e0063006f006e007400610069006e00650072005f0074006f0070005f00770069006400670065007401000000df000002020000010f00ffffff0000056d0000000000000004000000040000000800000008fc00000001000000030000000100000036004d0069006e0069006d0069007a006500640044006f0063006b00570069006400670065007400730054006f006f006c0062006100720000000000ffffffff0000000000000000')",
-          "pretty-print": "                 Brqt_plot__Plot__1__DataPlotWidget          Brqt_plot__Plot__2__DataPlotWidget          k   =                                                                                                                              m                                                      "
+          "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00000000fd00000001000000030000073d000003d5fc0100000003fb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0031005f005f00440061007400610050006c006f00740057006900640067006500740100000000000004880000013f00fffffffb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0032005f005f00440061007400610050006c006f00740057006900640067006500740100000149000001e10000000000000000fc0000048e000002af0000023d00fffffffc0200000002fb00000058007200710074005f007000750062006c00690073006800650072005f005f005000750062006c00690073006800650072005f005f0031005f005f005000750062006c006900730068006500720057006900640067006500740100000016000001d30000008c00fffffffb0000006c007200710074005f007200650063006f006e006600690067007500720065005f005f0050006100720061006d005f005f0031005f005f005f0070006c007500670069006e0063006f006e007400610069006e00650072005f0074006f0070005f00770069006400670065007401000001ef000001fc0000010f00ffffff0000073d0000000000000004000000040000000800000008fc00000001000000030000000100000036004d0069006e0069006d0069007a006500640044006f0063006b00570069006400670065007400730054006f006f006c0062006100720000000000ffffffff0000000000000000')",
+          "pretty-print": "                 Brqt_plot__Plot__1__DataPlotWidget          Brqt_plot__Plot__2__DataPlotWidget              =                                                                                                                              =                                                      "
         }
       },
       "groups": {

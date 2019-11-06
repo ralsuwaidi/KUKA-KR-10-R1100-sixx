@@ -1,16 +1,8 @@
 <?xml version="1.0"?>
-<robot name="kuka_kr10r1100sixx" xmlns:xacro="http://wiki.ros.org/xacro">
+<robot name="kuka_arm" xmlns:xacro="http://wiki.ros.org/xacro">
 
     <xacro:include filename="$(find arm_description)/urdf/constants.xacro"/>
     <xacro:include filename="$(find arm_description)/urdf/materials.xacro"/>
-
-
-	<gazebo>
-		<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-	    	<robotNamespace>/MYROBOT</robotNamespace>
-	    	<robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
-	  	</plugin>
-	</gazebo>
 
 
 
@@ -92,20 +84,22 @@
         <child link="link_1"/>
         <axis xyz="0 0 -1"/>
         <limit effort="0" lower="${-DEG2RAD * 170}" upper="${DEG2RAD * 170}" velocity="${DEG2RAD * 300}"/>
+	<dynamics damping="0.5"/>
     </joint>
 
 
-
+	
 	<transmission name="tran1">
-        <type>transmission_interface/SimpleTransmission</type>
-        <joint name="q1">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
-        </joint>
-        <actuator name="motor1">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
-            <mechanicalReduction>1</mechanicalReduction>
-        </actuator>
-    </transmission>
+		<type>transmission_interface/SimpleTransmission</type>
+		<joint name="q1">
+			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		</joint>
+		<actuator name="motor1">
+			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>  
+			<mechanicalReduction>1</mechanicalReduction>
+		</actuator>
+	</transmission>
+
 
 
 
@@ -145,7 +139,21 @@
         <child link="link_2"/>
         <axis xyz="0 1 0"/>
         <limit effort="0" lower="${-DEG2RAD * 190}" upper="${DEG2RAD * 45}" velocity="${DEG2RAD * 225}"/>
+	<dynamics damping="0.5"/>
     </joint>
+
+
+
+    <transmission name="tran2">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="q2">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor2">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
 
 
 
@@ -185,7 +193,21 @@
         <child link="link_3"/>
         <axis xyz="0 1 0"/>
         <limit effort="0" lower="${-DEG2RAD * 120}" upper="${DEG2RAD * 156}" velocity="${DEG2RAD * 225}"/>
+	<dynamics damping="0.5"/>
     </joint>
+
+
+
+	<transmission name="tran3">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="q3">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor3">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
 
 
 
@@ -225,7 +247,21 @@
         <child link="link_4"/>
         <axis xyz="-1 0 0"/>
         <limit effort="0" lower="${-DEG2RAD * 185}" upper="${DEG2RAD * 185}" velocity="${DEG2RAD * 381}"/>
+	<dynamics damping="0.5"/>
     </joint>
+
+
+
+    <transmission name="tran4">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="q4">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor4">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+	</transmission>
 
 
 
@@ -265,7 +301,21 @@
         <child link="link_5"/>
         <axis xyz="0 1 0"/>
         <limit effort="0" lower="${-DEG2RAD * 120}" upper="${DEG2RAD * 120}" velocity="${DEG2RAD * 311}"/>
+	<dynamics damping="0.5"/>
     </joint>
+
+
+
+    <transmission name="tran5">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="q5">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor5">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
 
 
 
@@ -305,7 +355,21 @@
         <child link="link_6"/>
         <axis xyz="-1 0 0"/>
         <limit effort="0" lower="${-DEG2RAD * 350}" upper="${DEG2RAD * 350}" velocity="${DEG2RAD * 492}"/>
+	<dynamics damping="0.5"/>
     </joint>
+
+
+
+    <transmission name="tran6">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="q6">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor6">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
 
 
 
@@ -318,5 +382,12 @@
         <child link="tool"/>
         <origin xyz="0 0 0" rpy="0 ${DEG2RAD * 90} 0"/>
     </joint>
+
+
+	<gazebo>
+		<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+			<robotNamespace>/kuka_arm</robotNamespace>
+		</plugin>
+	</gazebo>
 
 </robot>

@@ -83,7 +83,7 @@
         <parent link="base_link"/>
         <child link="link_1"/>
         <axis xyz="0 0 -1"/>
-        <limit effort="0" lower="${-DEG2RAD * 170}" upper="${DEG2RAD * 170}" velocity="${DEG2RAD * 300}"/>
+        <limit effort="100" lower="${-DEG2RAD * 170}" upper="${DEG2RAD * 170}" velocity="${DEG2RAD * 300}"/>
 	<dynamics damping="0.0" friction="0.0"/>
     </joint>
 
@@ -138,7 +138,7 @@
         <parent link="link_1"/>
         <child link="link_2"/>
         <axis xyz="0 1 0"/>
-        <limit effort="0" lower="${-DEG2RAD * 190}" upper="${DEG2RAD * 45}" velocity="${DEG2RAD * 225}"/>
+        <limit effort="100" lower="${-DEG2RAD * 190}" upper="${DEG2RAD * 45}" velocity="${DEG2RAD * 225}"/>
 	<dynamics damping="0.0" friction="0.0"/>
     </joint>
 
@@ -192,7 +192,7 @@
         <parent link="link_2"/>
         <child link="link_3"/>
         <axis xyz="0 1 0"/>
-        <limit effort="0" lower="${-DEG2RAD * 120}" upper="${DEG2RAD * 156}" velocity="${DEG2RAD * 225}"/>
+        <limit effort="100" lower="${-DEG2RAD * 120}" upper="${DEG2RAD * 156}" velocity="${DEG2RAD * 225}"/>
 	<dynamics damping="0.0" friction="0.0"/>
     </joint>
 
@@ -246,7 +246,7 @@
         <parent link="link_3"/>
         <child link="link_4"/>
         <axis xyz="-1 0 0"/>
-        <limit effort="0" lower="${-DEG2RAD * 185}" upper="${DEG2RAD * 185}" velocity="${DEG2RAD * 381}"/>
+        <limit effort="100" lower="${-DEG2RAD * 185}" upper="${DEG2RAD * 185}" velocity="${DEG2RAD * 381}"/>
 	<dynamics damping="0.0" friction="0.0"/>
     </joint>
 
@@ -300,7 +300,7 @@
         <parent link="link_4"/>
         <child link="link_5"/>
         <axis xyz="0 1 0"/>
-        <limit effort="0" lower="${-DEG2RAD * 120}" upper="${DEG2RAD * 120}" velocity="${DEG2RAD * 311}"/>
+        <limit effort="100" lower="${-DEG2RAD * 120}" upper="${DEG2RAD * 120}" velocity="${DEG2RAD * 311}"/>
 	<dynamics damping="0.0" friction="0.0"/>
     </joint>
 
@@ -354,7 +354,7 @@
         <parent link="link_5"/>
         <child link="link_6"/>
         <axis xyz="-1 0 0"/>
-        <limit effort="0" lower="${-DEG2RAD * 350}" upper="${DEG2RAD * 350}" velocity="${DEG2RAD * 492}"/>
+        <limit effort="100" lower="${-DEG2RAD * 350}" upper="${DEG2RAD * 350}" velocity="${DEG2RAD * 492}"/>
 	<dynamics damping="0.0" friction="0.0"/>
     </joint>
 

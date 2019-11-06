@@ -53,7 +53,7 @@ For this moment I use rqt for publish commands to joints. You can run it with th
 $ roslaunch arm_control gazebo.launch
 ```
 
-If you vant to use python instead run
+If you want to use python instead run
 ```bash
 $ rosrun arm_control control.py
 ```

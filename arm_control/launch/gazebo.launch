@@ -22,8 +22,6 @@
 		joint2_position_controller joint3_position_controller joint4_position_controller
 		joint5_position_controller joint6_position_controller"/>
 
-	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
-
 	<!-- convert joint states to TF transforms for rviz, etc -->
 	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
 		respawn="false" output="screen">
@@ -34,6 +32,7 @@
 	<include file="$(find arm_control)/launch/arm_control.launch"/>
 
 	<!-- run rviz -->
+	<!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" /> -->
 	<!-- <env name="LC_NUMERIC" value="en_US.UTF-8"/> -->
 	<!-- <node name="rviz" pkg="rviz" type="rviz" /> -->
 

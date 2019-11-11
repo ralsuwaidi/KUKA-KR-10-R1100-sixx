@@ -17,6 +17,8 @@ def talker():
         rate.sleep()
  
 if __name__ == '__main__':
+    for i in range(1:7):
+        joint = '/kuka_arm/joint' + str(i) +'_position_controller/command'
     try:
         talker()
     except rospy.ROSInterruptException:

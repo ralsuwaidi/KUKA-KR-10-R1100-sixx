@@ -11,7 +11,6 @@ def move_joint(pub, joint_name, speed, upper_limit, lower_limit):
     position = math.sin(i/rate_value*speed)*diff + offset
     #rospy.loginfo(position)
     pub.publish(position)
-    rate.sleep()
 
 def joint_name(number):
     joint_name = '/kuka_arm/joint' + str(number) +'_position_controller/command'
@@ -40,3 +39,4 @@ if __name__ == '__main__':
                 move_joint(pub[i], joints[i], speed, upper_limit, lower_limit)
             except rospy.ROSInterruptException:
                 pass
+        rate.sleep()

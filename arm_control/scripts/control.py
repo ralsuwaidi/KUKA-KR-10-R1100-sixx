@@ -12,7 +12,7 @@ def talker():
     while not rospy.is_shutdown():
         i = rospy.get_time()
         position = math.sin(i/rate_value)*1.5 - 2
-        rospy.loginfo(position)
+        #rospy.loginfo(position)
         pub.publish(position)
         rate.sleep()
  

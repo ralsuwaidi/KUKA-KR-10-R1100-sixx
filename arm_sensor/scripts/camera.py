@@ -22,7 +22,7 @@ class ImageSaver:
 		self.ImageNumber = 0
 
 	def callback(self, msg):
-		rospy.loginfo(msg.header)
+		#rospy.loginfo(msg.header)
 		try:
 			# Convert ROS Image message to OpenCV2
 			cv2_img = bridge.imgmsg_to_cv2(msg, "bgr8")

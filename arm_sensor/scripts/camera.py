@@ -31,8 +31,7 @@ class ImageSaver:
 		else:
 			# Save OpenCV2 image as a jpeg
 			self.ImageNumber += 1
-			filename = './images/camera_image_' + str(self.ImageNumber) + '.jpg'
-			print filename			
+			filename = './images/camera_image_' + str(self.ImageNumber) + '.jpg'			
 			cv2.imwrite(filename, cv2_img)
 
 	def main(self):

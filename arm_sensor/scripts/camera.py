@@ -20,19 +20,18 @@ class ImageSaver:
 
 	def __init__(self):
 		self.ImageNumber = 0
-		self.path = os.getcwd()
 
 	def callback(self, msg):
 		rospy.loginfo(msg.header)
 		try:
-			# Convert your ROS Image message to OpenCV2
+			# Convert ROS Image message to OpenCV2
 			cv2_img = bridge.imgmsg_to_cv2(msg, "bgr8")
 		except CvBridgeError, e:
 			print(e)
 		else:
-			# Save your OpenCV2 image as a jpeg
+			# Save OpenCV2 image as a jpeg
 			self.ImageNumber += 1
-			filename = self.path + '/images/camera_image_' + str(self.ImageNumber) + '.jpg'
+			filename = './images/camera_image_' + str(self.ImageNumber) + '.jpg'
 			print filename			
 			cv2.imwrite(filename, cv2_img)
 

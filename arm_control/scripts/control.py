@@ -5,13 +5,14 @@ from std_msgs.msg import Float64
 import math
  
 def talker():
-    pub = rospy.Publisher('/kuka_arm/joint1_position_controller/command', Float64, queue_size=10)
+    pub = rospy.Publisher('/kuka_arm/joint2_position_controller/command', Float64, queue_size=10)
     rospy.init_node('talker', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+    rate_value = 50 # 50hz
+    rate = rospy.Rate(rate_value)
     while not rospy.is_shutdown():
-        hello_str = "hello world %s" % rospy.get_time()
-        position = math.pi/2
-        #rospy.loginfo(position)
+        i = rospy.get_time()
+        position = math.sin(i/rate_value)*1.5 - 2
+        rospy.loginfo(position)
         pub.publish(position)
         rate.sleep()
  

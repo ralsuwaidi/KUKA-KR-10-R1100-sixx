@@ -4,19 +4,39 @@ import rospy
 from std_msgs.msg import Float64
 import math
  
-def talker():
-    pub = rospy.Publisher('/kuka_arm/joint1_position_controller/command', Float64, queue_size=10)
-    rospy.init_node('talker', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
-    while not rospy.is_shutdown():
-        hello_str = "hello world %s" % rospy.get_time()
-        position = math.pi/2
-        #rospy.loginfo(position)
-        pub.publish(position)
-        rate.sleep()
+def move_joint(pub, joint_name, speed, upper_limit, lower_limit):
+    i = rospy.get_time()
+    diff = (upper_limit - lower_limit)/2
+    offset = upper_limit - diff
+    position = math.sin(i/rate_value*speed)*diff + offset
+    #rospy.loginfo(position)
+    pub.publish(position)
+
+def joint_name(number):
+    joint_name = '/kuka_arm/joint' + str(number) +'_position_controller/command'
+    return joint_name
  
 if __name__ == '__main__':
-    try:
-        talker()
-    except rospy.ROSInterruptException:
-        pass
+
+    speed = 100
+    upper_limit = math.pi
+    lower_limit = -math.pi
+
+    joints = []
+    pub = []
+    joints_number = 6
+    for i in range(joints_number):
+        joints.append(joint_name(i+1))
+        pub.append(rospy.Publisher(joints[i], Float64, queue_size=10))
+    
+    rospy.init_node('joints_talker', anonymous=True)
+    rate_value = 50 # 50hz
+    rate = rospy.Rate(rate_value)
+
+    while not rospy.is_shutdown():
+        for i in range(joints_number):
+            try:
+                move_joint(pub[i], joints[i], speed, upper_limit, lower_limit)
+            except rospy.ROSInterruptException:
+                pass
+        rate.sleep()

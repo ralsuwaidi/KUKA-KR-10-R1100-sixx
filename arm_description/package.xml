@@ -1,9 +1,13 @@
 <?xml version="1.0"?>
-<package>
-	<name>arm_description</name>
-	<version>0.0.1</version>
-	<description>Description</description>
-	<maintainer email="dankirsdot@gmail.com">Daniil Kirsanov</maintainer>
-	<license>MIT</license>
-	<buildtool_depend>catkin</buildtool_depend>
+<package format="2">
+  <name>arm_description</name>
+  <version>0.0.1</version>
+  <description>The arm_description package</description>
+
+  <license>MIT</license>
+
+  <maintainer email="dankirsdot@gmail.com">Daniil Kirsanov</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
 </package>

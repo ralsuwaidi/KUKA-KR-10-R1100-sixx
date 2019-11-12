@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<package>
+<package format="2">
   <name>arm_control</name>
-  <version>0.0.0</version>
+  <version>0.0.1</version>
   <description>The arm_control package</description>
 
   <license>MIT</license>
@@ -10,14 +10,11 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <run_depend>controller_manager</run_depend>
-  <run_depend>joint_state_controller</run_depend>
-  <run_depend>robot_state_publisher</run_depend>
+  <exec_depend>controller_manager</exec_depend>
+  <exec_depend>joint_state_controller</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
 
-  <run_depend>rqt_gui</run_depend>
-  <run_depend>effort_controllers</run_depend>
-
-  <export>
-  </export>
+  <exec_depend>rqt_gui</exec_depend>
+  <exec_depend>effort_controllers</exec_depend>
 
 </package>

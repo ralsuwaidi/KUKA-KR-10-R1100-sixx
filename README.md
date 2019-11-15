@@ -60,5 +60,12 @@ $ rosrun arm_control control.py
 
 Example of robot movements is [here](https://youtu.be/r0B7GUYYAzM)
 
+## Run tests
+
+To run forward kinematics unit test use this command 
+```bash
+$ rosrun arm_tests test.py
+```
+
 
 ### Enjoy!

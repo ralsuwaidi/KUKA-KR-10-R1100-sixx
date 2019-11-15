@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>arm_description</name>
+  <name>arm_sensor</name>
   <version>0.0.1</version>
-  <description>The arm_description package</description>
+  <description>The arm_sensor package</description>
 
   <license>MIT</license>
 

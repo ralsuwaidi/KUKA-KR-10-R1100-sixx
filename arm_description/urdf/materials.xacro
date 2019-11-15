@@ -14,4 +14,10 @@
     </material>
   </xacro:macro>
 
+  <xacro:macro name="material_sensors">
+    <material name="">
+      <color rgba="${color_sensors}"/>
+    </material>
+  </xacro:macro>
+
 </robot>

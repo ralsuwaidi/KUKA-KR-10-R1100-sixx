@@ -9,7 +9,6 @@ from sensor_msgs.msg import JointState
 
 
 
-
 class moveableTest(unittest.TestCase):
     publisher_working = False
     joints = np.array([])
@@ -29,6 +28,7 @@ class moveableTest(unittest.TestCase):
         
         # robot initial position
         initial_pose = np.array(np.deg2rad([0, -90, 0, 0, 0, 0]))
+        
         # robot current position
         current_pose = np.array(self.joints)
 
@@ -38,8 +38,6 @@ class moveableTest(unittest.TestCase):
         # if they are different - robot is moveable
         self.assertEqual(flag, False, "Robot is not moveable!")
 
-
-        
 
 
 if __name__ == '__main__':

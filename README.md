@@ -62,9 +62,20 @@ Example of robot movements is [here](https://youtu.be/r0B7GUYYAzM)
 
 ## Run tests
 
+### Unit test
 To run forward kinematics unit test use this command 
 ```bash
-$ rosrun arm_tests test.py
+$ rosrun arm_tests unit_test.py
+```
+
+### Integration test
+After you started the robot simulation with the following command
+```bash
+$ roslaunch arm_tests gazebo.launch
+```
+you can run integration test that can check you the robot is moveable 
+```bash
+$ rosrun arm_tests integration_test.py
 ```
 
 

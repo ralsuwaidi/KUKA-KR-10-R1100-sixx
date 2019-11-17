@@ -73,7 +73,7 @@ After you started the robot simulation with the following command
 ```bash
 $ roslaunch arm_tests gazebo.launch
 ```
-you can run integration test that can check you the robot is moveable 
+you can run integration test that can check if the robot is moveable 
 ```bash
 $ rosrun arm_tests integration_test.py
 ```

@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 import numpy as np
-import matplotlib as plt
 
 np.set_printoptions(precision=3)
 

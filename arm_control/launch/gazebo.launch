@@ -30,8 +30,8 @@
 
 	<node pkg="arm_control" name="control" type="control.py" output="screen"/>
 
-	<test test-name="_unit" pkg="arm_control" type="unit_test.py" />
-	<test test-name="_integration" pkg="arm_control" type="integration_test.py" />
+	<test test-name="unit" pkg="arm_control" type="unit_test.py" />
+	<test test-name="integration" pkg="arm_control" type="integration_test.py" />
 
 	<!-- run rviz -->
 	<!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" /> -->

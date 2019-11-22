@@ -4,7 +4,7 @@
 	<include file="$(find gazebo_ros)/launch/empty_world.launch">
 		<arg name="physics" value="ode" />  <!-- ode, bullet, dart or simbody -->
 		<arg name="paused" value="false"/>
-		<arg name="verbose" value="true"/>
+		<arg name="verbose" value="false"/>
 		<arg name="gui" value="true"/>
 	</include>
 
@@ -28,8 +28,10 @@
 	<remap from="/joint_states" to="/kuka_arm/joint_states" />
 	</node>
 
-	<!-- include arm_control launch file -->
-	<include file="$(find arm_control)/launch/arm_control.launch"/>
+	<node pkg="arm_control" name="control" type="control.py" output="screen"/>
+
+	<test test-name="unit_test" pkg="arm_control" type="unit_test.py" />
+	<test test-name="integration_test" pkg="arm_control" type="integration_test.py" />
 
 	<!-- run rviz -->
 	<!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" /> -->

@@ -69,13 +69,9 @@ $ rosrun arm_tests unit_test.py
 ```
 
 ### Integration test
-After you started the robot simulation with the following command
+To run unit and integration tests use the following command
 ```bash
-$ roslaunch arm_tests gazebo.launch
-```
-you can run integration test that can check if the robot is moveable 
-```bash
-$ rosrun arm_tests integration_test.py
+$ catkin_make run_tests && catkin_test_results
 ```
 
 

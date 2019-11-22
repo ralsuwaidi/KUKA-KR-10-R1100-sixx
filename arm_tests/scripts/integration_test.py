@@ -4,7 +4,6 @@ import rospy
 import rostest
 import unittest
 import numpy as np
-from time import sleep
 from sensor_msgs.msg import JointState
 
 
@@ -21,7 +20,7 @@ class moveableTest(unittest.TestCase):
         rospy.init_node('publisher_test')
         rospy.Subscriber('/kuka_arm/joint_states', JointState, self.callback)
 
-        sleep(1)
+        rospy.sleep(1)
 
         # check if the joint_state_publisher is working
         self.assertTrue(self.publisher_working, "Joint state publisher is not working!")

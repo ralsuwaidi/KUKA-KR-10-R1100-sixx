@@ -16,7 +16,7 @@ matrix:
     dist: xenial
     env: ROS_DISTRO=kinetic
   - name: "Melodic Morenia"
-    dist: melodic
+    dist: bionic
     env: ROS_DISTRO=melodic
 
 # Configuration variables. All variables are global now, but this can be used to

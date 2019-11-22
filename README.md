@@ -1,6 +1,6 @@
 # KUKA-KR-10-R1100 sixx
 
-![Build Status](https://travis-ci.com/dankirsdot/KUKA-KR-10-R1100-sixx.svg?branch=badges)](https://travis-ci.com/dankirsdot/KUKA-KR-10-R1100-sixx)
+[![Build Status](https://travis-ci.com/dankirsdot/KUKA-KR-10-R1100-sixx.svg?branch=badges)](https://travis-ci.com/dankirsdot/KUKA-KR-10-R1100-sixx)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dankirsdot/KUKA-KR-10-R1100-sixx/issues)
 [![HitCount](http://hits.dwyl.io/dankirsdot/KUKA-KR-10-R1100-sixx.svg)](http://hits.dwyl.io/dankirsdot/KUKA-KR-10-R1100-sixx)
 

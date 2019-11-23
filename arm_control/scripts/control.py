@@ -2,13 +2,13 @@
 
 import rospy
 from std_msgs.msg import Float64
-import math
+import numpy as np
  
-def move_joint(pub, joint_name, speed, upper_limit, lower_limit):
+def move_joint(pub, speed, upper_limit, lower_limit):
     i = rospy.get_time()
     diff = (upper_limit - lower_limit)/2
     offset = upper_limit - diff
-    position = math.sin(i/rate_value*speed)*diff + offset
+    position = np.sin(i/rate_value*speed)*diff + offset
     #rospy.loginfo(position)
     pub.publish(position)
 
@@ -19,8 +19,8 @@ def joint_name(number):
 if __name__ == '__main__':
 
     speed = 100
-    upper_limit = math.pi
-    lower_limit = -math.pi
+    upper_limit = np.pi
+    lower_limit = -np.pi
 
     joints = []
     pub = []
@@ -36,7 +36,7 @@ if __name__ == '__main__':
     while not rospy.is_shutdown():
         for i in range(joints_number):
             try:
-                move_joint(pub[i], joints[i], speed, upper_limit, lower_limit)
+                move_joint(pub[i], speed, upper_limit, lower_limit)
             except rospy.ROSInterruptException:
                 pass
         rate.sleep()

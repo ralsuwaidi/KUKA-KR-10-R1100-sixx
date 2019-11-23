@@ -62,13 +62,6 @@ Example of robot movements is [here](https://youtu.be/r0B7GUYYAzM)
 
 ## Run tests
 
-### Unit test
-To run forward kinematics unit test use this command 
-```bash
-$ rosrun arm_tests unit_test.py
-```
-
-### Integration test
 To run unit and integration tests use the following command
 ```bash
 $ catkin_make run_tests && catkin_test_results

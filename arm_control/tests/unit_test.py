@@ -22,13 +22,12 @@ class testFK(unittest.TestCase):
 
 		# desired result
 		result = np.array([[1, 0, 0, 0.62],
-				           [0, -1, 0, 0],
-				   		   [0, 0, -1, -0.195],
-				           [0, 0, 0, 1]])
+						   [0, -1, 0, 0],
+						   [0, 0, -1, -0.195],
+						   [0, 0, 0, 1]])
 
 		# compare numpy arrays
 		flag = np.array_equal(fk, result) 
-
 		self.assertEqual(flag, True, "Zero configuration test was failed!")
 
 	def test_second_joint(self):
@@ -40,14 +39,13 @@ class testFK(unittest.TestCase):
 
 		# desired result
 		result = np.array([[0, 0, 1, 0.62],
-				           [0, -1, 0, 0],
-				   		   [1, 0, 0, 0.995],
-				           [0, 0, 0, 1]])
+						   [0, -1, 0, 0],
+						   [1, 0, 0, 0.995],
+						   [0, 0, 0, 1]])
 
 		# compare numpy arrays
 		flag = np.array_equal(fk, result) 
-
 		self.assertEqual(flag, True, "Second joint test was failed!")
 
 if __name__ == '__main__':
-	rosunit.unitrun("arm_tests", 'test_add', testFK)
+	rosunit.unitrun('arm_tests', 'test_forward_kinematics', testFK)

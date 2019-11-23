@@ -4,12 +4,12 @@
   <!-- default colors for robots -->
 
   <!-- RAL 9016: base frame (traffic white) -->
-  <xacro:property name="color_base_frame" value="${241/255} ${240/255} ${234/255} 1.0"/>
+  <xacro:property name="color_base_frame" value="${241/255} ${240/255} ${234/255} 1.0" />
 
   <!-- RAL 9016: moving parts (traffic white) -->
-  <xacro:property name="color_moving_parts" value="${241/255} ${240/255} ${234/255} 1.0"/>
+  <xacro:property name="color_moving_parts" value="${241/255} ${240/255} ${234/255} 1.0" />
 
   <!-- RAL 9016: moving parts (traffic white) -->
-  <xacro:property name="color_sensors" value="${255/255} ${17/255} ${0/255} 1.0"/>
+  <xacro:property name="color_sensors" value="${255/255} ${17/255} ${0/255} 1.0" />
 
 </robot>

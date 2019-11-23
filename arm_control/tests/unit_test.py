@@ -8,6 +8,9 @@ import numpy as np
 
 class testFK(unittest.TestCase):
 
+    # Set the precision
+    decimal = 3
+
     # Table of DH parameters
     d = np.array([0.4, 0, 0, 0.515, 0, 0.08])
     a = np.array([0.025, 0.560, 0.035, 0, 0, 0])
@@ -27,8 +30,8 @@ class testFK(unittest.TestCase):
                            [0, 0, 0, 1]])
 
         # compare numpy arrays
-        flag = np.array_equal(fk, result)
-        self.assertEqual(flag, True, "Zero configuration test was failed!")
+        np.testing.assert_array_almost_equal(
+            fk, result, self.decimal, 'Zero configuration test was failed!')
 
     def test_second_joint(self):
         # Joint variables
@@ -44,8 +47,8 @@ class testFK(unittest.TestCase):
                            [0, 0, 0, 1]])
 
         # compare numpy arrays
-        flag = np.array_equal(fk, result)
-        self.assertEqual(flag, True, "Second joint test was failed!")
+        np.testing.assert_array_almost_equal(
+            fk, result, self.decimal, 'Second joint test was failed!')
 
 
 if __name__ == '__main__':

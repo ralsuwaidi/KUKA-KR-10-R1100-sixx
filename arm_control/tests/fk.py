@@ -25,5 +25,4 @@ def FK(theta, d, a, alpha):
         trans[:, :, i] = DH_transform(theta[i], d[i], a[i], alpha[i])
         fk = np.matmul(fk, trans[:, :, i])
 
-    fk = np.round(fk, 3)
     return fk

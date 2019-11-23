@@ -21,23 +21,16 @@ class controlTest(unittest.TestCase):
         return joint_name
 
     def callback(self, data):
-        self.publisher_working = True
         self.position = data.position
 
     def test_control(self):
 
-        # Check it the joint state publisher is working
         rospy.init_node('integration')
         rospy.Subscriber('/kuka_arm/joint_states', JointState, self.callback)
 
-        rospy.sleep(1)  # wait some time
-
-        self.assertTrue(self.publisher_working,
-                        "Joint state publisher is not working! Run the simulation!")
-
-        # Save current robot position
-        before_pose = np.array(self.position)
-
+        # Set desired position and precision
+        decimal = 1
+        desired_pose = np.array(np.deg2rad([0, 0, 0, 0, 0, 0]))
         # Set rate for the publishers
         rate_value = 50  # 50hz
         rate = rospy.Rate(rate_value)
@@ -49,31 +42,35 @@ class controlTest(unittest.TestCase):
             joints.append(self.joint_name(i+1))
             pub.append(rospy.Publisher(joints[i], Float64, queue_size=10))
 
+        rospy.sleep(1)  # wait some time
+
+        # Save current robot position
+        initial_pose = np.array(self.position)
+
+        # Make sure that initial and desired position are not the same
+        np.testing.assert_raises(AssertionError, np.testing.assert_array_almost_equal,
+                                 desired_pose, initial_pose, decimal, 'Joints have the same initial and desired position!')
+
         # Give a command for the robot to move to the initial state
-        desired_pose = np.array(np.deg2rad([0, 0, 0, 0, 0, 0]))
         time = 200
-        speed = 100
         for j in range(time):
             for i in range(joints_number):
                 try:
-                    self.move_joint_to(pub[i], speed*desired_pose[i])
+                    self.move_joint_to(pub[i], desired_pose[i])
                 except rospy.ROSInterruptException:
                     pass
             rate.sleep()
 
         # Save robot position after the command
-        after_pose = np.array(self.position)
+        final_pose = np.array(self.position)
 
-        # Compare robot position before and after the command
-        flag = np.array_equal(before_pose, after_pose)
-        self.assertEqual(flag, False, "Robot is not moveable!")
+        # Compare initial and final robot position
+        np.testing.assert_raises(AssertionError, np.testing.assert_array_almost_equal,
+                                 initial_pose, final_pose, decimal, 'Joints have the same initial and desired position!')
 
         # Compare desired robot position and position after the command
-        delta = 0.1
-        for i in range(joints_number):
-            msg = joints[i] + ' did not move to the desired position!'
-            self.assertAlmostEqual(
-                desired_pose[i], after_pose[i], msg=msg, delta=delta)
+        np.testing.assert_array_almost_equal(
+            desired_pose, final_pose, decimal, 'Robot did not move to the desired position!')
 
 
 if __name__ == '__main__':

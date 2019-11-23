@@ -5,6 +5,6 @@ find_package(catkin REQUIRED)
 
 if(CATKIN_ENABLE_TESTING)
   find_package(rostest REQUIRED)
-  add_rostest(launch/gazebo.launch)
+  add_rostest(tests/unit.test)
+  add_rostest(tests/integration.test)
 endif()
-

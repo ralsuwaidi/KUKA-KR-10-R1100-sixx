@@ -8,7 +8,7 @@
 		<arg name="gui" value="false" />
 	</include>
 
-	<param name="robot_description" command="xacro $(find arm_description)/urdf/arm.urdf.xacro" />
+	<param name="robot_description" command="xacro --inorder $(find arm_description)/urdf/arm.urdf.xacro" />
 
 	<node name="spawn_robot" pkg="gazebo_ros" type="spawn_model" args="-urdf -model kuka_kr10r1100sixx -param robot_description" />
 

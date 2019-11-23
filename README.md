@@ -39,27 +39,22 @@ $ catkin_make
 $ source devel/setup.bash
 ```
 
-## Run the model
+## Show the model
 
 You can use Rviz
 ```bash
-$ roslaunch arm_launch rviz.launch
+$ roslaunch arm_show rviz.launch
 ```
 or Gazebo launch files
 ```bash
-$ roslaunch arm_launch gazebo.launch
+$ roslaunch arm_show gazebo.launch
 ```
 
 ## Run robot control
 
 For this moment I use rqt for publish commands to joints. You can run it with the next command:
 ```bash
-$ roslaunch arm_control gazebo.launch
-```
-
-If you want to use python instead run
-```bash
-$ rosrun arm_control control.py
+$ roslaunch arm_control control.launch
 ```
 
 Example of robot movements is [here](https://youtu.be/r0B7GUYYAzM)

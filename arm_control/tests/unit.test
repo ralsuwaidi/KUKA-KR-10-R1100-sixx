@@ -1,0 +1,4 @@
+<?xml version="1.0" ?>
+<launch>
+	<test test-name="unit" pkg="arm_control" type="unit_test.py" />
+</launch>

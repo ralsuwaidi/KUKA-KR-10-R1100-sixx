@@ -60,5 +60,12 @@ $ rosrun arm_control control.py
 
 Example of robot movements is [here](https://youtu.be/r0B7GUYYAzM)
 
+## Run tests
+
+To run unit and integration tests use the following command
+```bash
+$ catkin_make run_tests && catkin_test_results
+```
+
 
 ### Enjoy!

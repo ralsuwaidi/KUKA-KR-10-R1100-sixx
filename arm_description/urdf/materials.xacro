@@ -1,22 +1,22 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <robot xmlns:xacro="http://wiki.ros.org/xacro">
-  <xacro:include filename="$(find arm_description)/urdf/colors.xacro"/>
+  <xacro:include filename="$(find arm_description)/urdf/colors.xacro" />
 
   <xacro:macro name="material_base_frame">
     <material name="">
-      <color rgba="${color_base_frame}"/>
+      <color rgba="${color_base_frame}" />
     </material>
   </xacro:macro>
 
   <xacro:macro name="material_moving_parts">
     <material name="">
-      <color rgba="${color_moving_parts}"/>
+      <color rgba="${color_moving_parts}" />
     </material>
   </xacro:macro>
 
   <xacro:macro name="material_sensors">
     <material name="">
-      <color rgba="${color_sensors}"/>
+      <color rgba="${color_sensors}" />
     </material>
   </xacro:macro>
 

@@ -52,9 +52,14 @@ $ roslaunch arm_show gazebo.launch
 
 ## Run robot control
 
-For this moment I use rqt for publish commands to joints. You can run it with the next command:
+You can run the simulation with the python control script using the following command:
 ```bash
 $ roslaunch arm_control control.launch
+```
+
+You can also add the camera to the arm with the following command:
+```bash
+$ roslaunch arm_control control.launch is_using_camera:=true
 ```
 
 Example of robot movements is [here](https://youtu.be/r0B7GUYYAzM)

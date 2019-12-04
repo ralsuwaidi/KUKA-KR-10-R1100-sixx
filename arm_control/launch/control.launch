@@ -1,14 +1,16 @@
 <?xml version="1.0" ?>
 <launch>
 
+	<arg name="is_using_camera" default="false" />
+
 	<include file="$(find gazebo_ros)/launch/empty_world.launch">
 		<arg name="physics" value="ode" /> <!-- ode, bullet, dart or simbody -->
 		<arg name="paused" value="false" />
 		<arg name="verbose" value="false" />
-		<arg name="gui" value="true" />
+		<arg name="gui" value="false" />
 	</include>
 
-	<param name="robot_description" command="xacro $(find arm_description)/urdf/arm.urdf.xacro" />
+	<param name="robot_description" command="xacro $(find arm_description)/urdf/arm.urdf.xacro with_camera:=$(arg is_using_camera)" />
 
 	<node name="spawn_robot" pkg="gazebo_ros" type="spawn_model" args="-urdf -model kuka_kr10r1100sixx -param robot_description" />
 
@@ -23,15 +25,17 @@
 	<node pkg="arm_control" name="control" type="control.py" output="screen" />
 
 	<!-- Uncomment if you want to make photos -->
-	<!-- <node pkg="arm_control" name="sensor" type="camera.py" output="screen" /> -->
+	<group if="$(arg is_using_camera)">
+		<node pkg="arm_control" name="sensor" type="camera.py" output="screen" />
+	</group>
 
 	<!-- Uncomment the following lines to run rviz -->
-	<!-- <env name="LC_NUMERIC" value="en_US.UTF-8" /> -->
+	<env name="LC_NUMERIC" value="en_US.UTF-8" />
 	<!-- Convert joint states to TF transforms for rviz, etc -->
-	<!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
 		<remap from="/joint_states" to="/kuka_arm/joint_states" />
-	</node> -->
-	<!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" /> -->
-	<!-- <node name="rviz" pkg="rviz" type="rviz" /> -->
+	</node>
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+	<node name="rviz" pkg="rviz" type="rviz" />
 
 </launch>

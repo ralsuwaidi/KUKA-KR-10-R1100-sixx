@@ -5,8 +5,13 @@ sudo: required
 cache:
   - apt
 
+
+
 # Build all valid Ubuntu/ROS combinations available on Travis VMs.
 language: generic
+# docker service
+services:
+  - docker
 matrix:
   include:
     - name: "Xenial kinetic"

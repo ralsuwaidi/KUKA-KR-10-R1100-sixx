@@ -38,7 +38,7 @@ env:
 
 # Install system dependencies, namely a very barebones ROS setup.
 before_install:
-  - docker build -t vnc-docker . # test docker build
+  - docker run -d -p 5901:5901 -p 6901:6901 henry2423/ros-vnc-ubuntu:melodic  # test docker build
   - sudo sh -c "echo \"deb http://packages.ros.org/ros/ubuntu $ROS_CI_DESKTOP main\" > /etc/apt/sources.list.d/ros-latest.list"
   - sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
   - sudo apt-get update -qq

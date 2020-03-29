@@ -4,7 +4,7 @@ LABEL maintainer "bpinaya@wpi.edu"
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update && apt-get install dirmngr -y python-rosdep
+RUN apt-get update && apt-get install dirmngr -y python-rosdep dpkg
 
 # Adding keys for ROS
 RUN sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'

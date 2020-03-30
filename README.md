@@ -41,6 +41,11 @@ catkin_make
 source devel/setup.bash
 ```
 
+## Build from docker
+```bash
+docker build -f docker-ros-vnc/Dockerfile docker-ros-vnc -t docker-ros-vnc
+```
+
 ## Show the model
 
 You can use Rviz

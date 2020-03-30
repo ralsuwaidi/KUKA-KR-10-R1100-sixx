@@ -23,8 +23,7 @@ sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31
 
 # install ROS Base
 sudo apt-get update
-sudo apt-get install ros-melodic-effort-controllers
-sudo apt-get install ros-melodic-control*
+sudo apt-get install ros-melodic-gazebo-ros-pkgs
 sudo apt-get install ros-melodic-ros-base
 
 # add ROS paths to environment

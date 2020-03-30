@@ -7,7 +7,7 @@
 		<arg name="physics" value="ode" /> <!-- ode, bullet, dart or simbody -->
 		<arg name="paused" value="false" />
 		<arg name="verbose" value="false" />
-		<arg name="gui" value="false" />
+		<arg name="gui" value="true" />
 	</include>
 
 	<param name="robot_description" command="xacro $(find arm_description)/urdf/arm.urdf.xacro with_camera:=$(arg is_using_camera)" />
@@ -29,13 +29,13 @@
 		<node pkg="arm_control" name="sensor" type="camera.py" output="screen" />
 	</group>
 
-	<!-- Uncomment the following lines to run rviz -->
-	<env name="LC_NUMERIC" value="en_US.UTF-8" />
-	<!-- Convert joint states to TF transforms for rviz, etc -->
+	<!-- Uncomment the following lines to run rviz 
+	<env name="LC_NUMERIC" value="en_US.UTF-8" /> -->
+	<!-- Convert joint states to TF transforms for rviz, etc 
 	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
 		<remap from="/joint_states" to="/kuka_arm/joint_states" />
 	</node>
 	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
-	<node name="rviz" pkg="rviz" type="rviz" />
+	<node name="rviz" pkg="rviz" type="rviz" /> -->
 
 </launch>

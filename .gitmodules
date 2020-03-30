@@ -1,0 +1,3 @@
+[submodule "docker-ros-vnc"]
+	path = docker-ros-vnc
+	url = https://github.com/henry2423/docker-ros-vnc.git

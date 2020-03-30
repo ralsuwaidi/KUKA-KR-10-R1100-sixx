@@ -103,9 +103,9 @@ RUN apt-get update && \
 
 # Install ROS
 RUN sh -c 'echo "deb http://packages.ros.org/ros/ubuntu `lsb_release -cs` main" > /etc/apt/sources.list.d/ros-latest.list' && \
-    apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116 && \
+    apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654 && \
     apt-get update && apt-get install -y ros-melodic-desktop && \
-    apt-get install -y python-rosinstall && \
+    apt-get install -y python-rosinstall python-rosdep ros-melodic-ros-control ros-melodic-ros-controllers && \
     rosdep init
 
 # Install Gazebo
@@ -121,20 +121,17 @@ RUN rosdep fix-permissions && rosdep update
 RUN echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 RUN /bin/bash -c "source ~/.bashrc"
 
-###Tensorflow Installation
-# Install pip
-USER root
-RUN apt-get install -y wget python-pip python-dev libgtk2.0-0 unzip libblas-dev liblapack-dev libhdf5-dev && \
-    curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
-    python get-pip.py
+## catkin_ws
+ENV CATKIN_WS=/home/ros/catkin_ws
 
-# prepare default python 2.7 environment
-USER root
-RUN pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.11.0-cp27-none-linux_x86_64.whl && \
-    pip install keras==2.2.4 matplotlib pandas scipy h5py testresources scikit-learn
+RUN sh -c 'mkdir -p ${CATKIN_WS}/src && \
+    cd ${CATKIN_WS}/src && \
+    git clone https://github.com/ralsuwaidi/KUKA-KR-10-R1100-sixx.git'
 
-# Expose Tensorboard
-EXPOSE 6006
+# make
+RUN /bin/bash -c 'source /opt/ros/melodic/setup.bash && cd ${CATKIN_WS} && \
+    catkin_make'
+RUN echo "source ${CATKIN_WS}/devel/setup.sh" >> ~/.bashrc
 
 # Expose Jupyter 
 EXPOSE 8888

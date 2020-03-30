@@ -13,17 +13,19 @@ To use the package, open a terminal and do the following:
 
 ```bash
 # enable all Ubuntu packages:
-$ sudo apt-add-repository universe
-$ sudo apt-add-repository multiverse
-$ sudo apt-add-repository restricted
+sudo apt-add-repository universe
+sudo apt-add-repository multiverse
+sudo apt-add-repository restricted
 
 # add ROS repository to apt sources
-$ sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-$ sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 0xB01FA116
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 
 # install ROS Base
-$ sudo apt-get update
-$ sudo apt-get install ros-melodic-ros-base
+sudo apt-get update
+sudo apt-get install ros-melodic-effort-controllers
+sudo apt-get install ros-melodic-control*
+sudo apt-get install ros-melodic-ros-base
 
 # add ROS paths to environment
 sudo sh -c 'echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc'
@@ -34,33 +36,33 @@ Close and restart the terminal.
 ## Build the model
 
 ```bash
-$ cd ~/catkin_workspace/
-$ git clone https://github.com/dankirsdot/KUKA-KR-10-R1100-2.git
-$ catkin_make
-$ source devel/setup.bash
+cd ~/catkin_workspace/
+git clone https://github.com/dankirsdot/KUKA-KR-10-R1100-2.git
+catkin_make
+source devel/setup.bash
 ```
 
 ## Show the model
 
 You can use Rviz
 ```bash
-$ roslaunch arm_show rviz.launch
+roslaunch arm_show rviz.launch
 ```
 or Gazebo launch files
 ```bash
-$ roslaunch arm_show gazebo.launch
+roslaunch arm_show gazebo.launch
 ```
 
 ## Run robot control
 
 You can run the simulation with the python control script using the following command:
 ```bash
-$ roslaunch arm_control control.launch
+roslaunch arm_control control.launch
 ```
 
 You can also add the camera to the arm with the following command:
 ```bash
-$ roslaunch arm_control control.launch is_using_camera:=true
+roslaunch arm_control control.launch is_using_camera:=true
 ```
 
 Example of robot movements is [here](https://youtu.be/r0B7GUYYAzM)
@@ -69,7 +71,7 @@ Example of robot movements is [here](https://youtu.be/r0B7GUYYAzM)
 
 To run unit and integration tests use the following command
 ```bash
-$ catkin_make run_tests && catkin_test_results
+catkin_make run_tests && catkin_test_results
 ```
 
 

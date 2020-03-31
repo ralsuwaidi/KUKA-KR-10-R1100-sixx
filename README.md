@@ -46,6 +46,11 @@ source devel/setup.bash
 docker build -f docker-ros-vnc/Dockerfile docker-ros-vnc -t docker-ros-vnc
 ```
 
+## Run from docker-hub
+```bash
+docker run -d -p 5901:5901 -p 6901:6901 suwaidi/docker-ros-vnc
+```
+
 ## Show the model
 
 You can use Rviz
